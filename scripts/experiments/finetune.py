@@ -91,7 +91,7 @@ def run_finetune_experiment():
         sage_acc = results['GraphSAGE'][dataset][-1]
         print(f"| {dataset:<7} | {gcn_acc:6.2f} | {gat_acc:6.2f} | {sage_acc:9.2f} |")
 
-    # Plot with correct output format (dot lines, no heavy border)
+    # Plot results
     plt.figure(figsize=(15, 4))
     for i, model_name in enumerate(models.keys()):
         plt.subplot(1, 3, i+1)

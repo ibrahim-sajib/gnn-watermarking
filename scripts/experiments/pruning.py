@@ -56,7 +56,7 @@ def run_pruning_experiment():
                 if parameters_to_prune:
                     for module, param_name in parameters_to_prune:
                         prune.l1_unstructured(module, name=param_name, amount=rate)
-                        prune.remove(module, param_name)  # ← Remove re-param
+                        prune.remove(module, param_name) 
 
                 # Regenerate trigger graph AFTER pruning
                 trigger_data = generate_trigger_graph(data, generator, wm_model)
@@ -92,7 +92,7 @@ def run_pruning_experiment():
         plt.xlabel('Pruning Rate (%)')
         plt.ylabel('Watermark Accuracy (%)')
         plt.ylim(50, 100)
-        plt.tick_params(top=False, right=False)  # no extra lines
+        plt.tick_params(top=False, right=False)
         if i == 0:
             plt.legend()
         plt.grid(True)
