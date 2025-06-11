@@ -18,7 +18,7 @@ This project implements a robust, imperceptible watermarking method for Graph Ne
 ## Repository Structure
 
 ```plaintext  
-gnn_watermarking/
+gnn-watermarking/
 ├── main.py                     # Entry point (to run experiments)
 ├── models/                     # Trained model .pth files
 |-- notebooks/                  # ipynb File
