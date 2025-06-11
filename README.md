@@ -38,6 +38,7 @@ gnn_watermarking/
 │   ├── sage.py                # GraphSAGE model
 ├── requirements.txt
 └── README.md
+```
 
 
 
