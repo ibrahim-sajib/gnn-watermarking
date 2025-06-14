@@ -69,10 +69,14 @@ python main.py
 # 📊 Run Experiments Individually
 Each script replicates a specific result from the paper. Outputs are saved in the results/ directory.
 
-6. Table 2 & Table 3 — Model Fidelity and Watermark Accuracy
-Output:
-results/model_performance_table.csv
-results/watermark_accuracy_table.csv
+6. Table 2 & Table 3 — Model Fidelity and Watermark Accuracy  
+
+Output:  
+
+results/model_performance_table.csv  
+
+results/watermark_accuracy_table.csv  
+
 
 ```
 python -m scripts.experiments.comparison
