@@ -66,6 +66,47 @@ pip install -r requirements.txt
 python main.py
 ```
 
+# 📊 Run Experiments Individually
+Each script replicates a specific result from the paper. Outputs are saved in the results/ directory.
+
+6. Table 2 & Table 3 — Model Fidelity and Watermark Accuracy
+```
+python -m scripts.experiments.comparison
+```
+Output:
+results/model_performance_table.csv
+results/watermark_accuracy_table.csv
+
+7. Figure 2 — Fine-Tuning Robustness
+```
+python -m scripts.experiments.finetune
+```
+Output:
+results/fine_tuning_robustness.png
+
+8. Figure 3 — Pruning Robustness
+```
+python -m scripts.experiments.pruning
+```
+Output:
+results/pruning_robustness.png
+
+9. Figure 4 — Evasion Attack (ROC Curve)
+```
+python -m scripts.experiments.evasion
+```
+Output:
+results/evasion_roc_curve.png
+
+10. Figure 5 — Fraudulent Ownership Attack
+```
+python -m scripts.experiments.fraud
+```
+Output:
+results/fraudulent_declaration.png
+
+
+
 
 ## References
    Zhang, Linji, Mingfu Xue, Leo Yu Zhang, Yushu Zhang, and Weiqiang Liu. "An imperceptible and owner-unique watermarking method for graph neural networks." In Proceedings of the ACM Turing Award Celebration Conference-China 2024, pp. 108-113. 2024.

@@ -4,6 +4,8 @@ from torch_geometric.nn import GCNConv, GATConv, SAGEConv
 import copy
 from torch.nn.utils import prune
 import matplotlib.pyplot as plt
+import os
+os.makedirs("results", exist_ok=True)
 
 from scripts.trigger import TriggerGenerator, generate_trigger_graph
 from scripts.train import bi_level_optimization
@@ -97,5 +99,14 @@ def run_pruning_experiment():
             plt.legend()
         plt.grid(True)
     plt.tight_layout()
-    plt.savefig('pruning_robustness.png')
-    plt.show()
+    plt.savefig('results/pruning_robustness.png')
+    # plt.show()
+
+
+
+
+
+
+
+if __name__ == "__main__":
+    run_pruning_experiment()

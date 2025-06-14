@@ -6,6 +6,8 @@ from sklearn.metrics import roc_curve, auc
 import numpy as np
 from torch_geometric.utils import to_dense_adj, dense_to_sparse
 import matplotlib.pyplot as plt
+import os
+os.makedirs("results", exist_ok=True)
 
 from scripts.trigger import TriggerGenerator, generate_trigger_graph
 from scripts.train import bi_level_optimization
@@ -105,5 +107,12 @@ def run_evasion_attack():
     plt.title('ROC Curve for Trigger Node Detection')
     plt.legend(loc='lower right')
     plt.grid(True)
-    plt.savefig('evasion_roc_curve.png')
-    plt.show()
+    plt.savefig('results/evasion_roc_curve.png')
+    # plt.show()
+
+
+
+
+
+if __name__ == "__main__":
+    run_evasion_attack()

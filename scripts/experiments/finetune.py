@@ -1,6 +1,8 @@
 import torch
 import torch.nn as nn
 import matplotlib.pyplot as plt
+import os
+os.makedirs("results", exist_ok=True)
 
 from scripts.trigger import TriggerGenerator, generate_trigger_graph
 from scripts.train import bi_level_optimization
@@ -112,5 +114,12 @@ def run_finetune_experiment():
         if i == 0:
             plt.legend()
     plt.tight_layout()
-    plt.savefig('fine_tuning_robustness.png')
-    plt.show()
+    plt.savefig('results/fine_tuning_robustness.png')
+    # plt.show()
+
+
+
+
+
+if __name__ == "__main__":
+    run_finetune_experiment()

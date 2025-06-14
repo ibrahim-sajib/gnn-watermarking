@@ -2,7 +2,10 @@
 import torch
 from torch_geometric.datasets import Planetoid
 import os
+import pandas as pd
 os.makedirs("models", exist_ok=True)
+os.makedirs("results", exist_ok=True)
+
 
 
 from models_def.gat import GAT
@@ -62,6 +65,27 @@ def run_comparison():
                 'WM_F1': wm_metrics['f1']*100
             })
 
+
+    # Save results table
+    df_full = pd.DataFrame(results)
+    df_full.to_csv("results/model_performance_table.csv", index=False)
+
+    # Watermark accuracy table
+    wm_table = {'Dataset': [], 'GCN': [], 'GAT': [], 'GraphSAGE': []}
+    for dataset in datasets:
+        wm_table['Dataset'].append(dataset)
+        for model in models.keys():
+            res = next(r for r in results if r['Dataset'] == dataset and r['Model'] == model)
+            wm_acc = res.get('WM_Acc', 0.0)
+            wm_table[model].append(f"{wm_acc:.2f}")
+
+    df_wm = pd.DataFrame(wm_table)
+    df_wm.to_csv("results/watermark_accuracy_table.csv", index=False)
+
+
+
+
+    # print the results
     print("\nModel performance (original model | watermarked model)")
     print("| Dataset |   Model   |  Accuracy (%)  | Precision (%) |   Recall (%)  | F1-score (%)  |")
     print("|---------|-----------|----------------|---------------|---------------|---------------|")
@@ -88,3 +112,10 @@ def run_comparison():
     print("|---------|-------|-------|------------|")
     for i in range(len(wm_table['Dataset'])):
         print(f"| {wm_table['Dataset'][i]:<7} | {wm_table['GCN'][i]:>5} | {wm_table['GAT'][i]:>5} | {wm_table['GraphSAGE'][i]:>10} |")
+
+
+
+
+
+if __name__ == "__main__":
+    run_comparison()

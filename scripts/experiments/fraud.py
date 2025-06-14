@@ -1,5 +1,7 @@
 import torch
 import matplotlib.pyplot as plt
+import os
+os.makedirs("results", exist_ok=True)
 
 from scripts.trigger import TriggerGenerator, generate_trigger_graph
 from scripts.train import bi_level_optimization
@@ -65,5 +67,11 @@ def run_fraudulent_declaration():
     plt.title("Fraudulent Declaration Attack Results")
     plt.xlabel("Generator Used for Verification")
     plt.ylabel("Target Model")
-    plt.savefig('fraudulent_declaration.png')
-    plt.show()
+    plt.savefig('results/fraudulent_declaration.png')
+    # plt.show()
+
+
+
+
+if __name__ == "__main__":
+    run_fraudulent_declaration()
