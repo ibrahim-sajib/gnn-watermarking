@@ -70,40 +70,46 @@ python main.py
 Each script replicates a specific result from the paper. Outputs are saved in the results/ directory.
 
 6. Table 2 & Table 3 — Model Fidelity and Watermark Accuracy
-```
-python -m scripts.experiments.comparison
-```
 Output:
 results/model_performance_table.csv
 results/watermark_accuracy_table.csv
 
+```
+python -m scripts.experiments.comparison
+```
+
+
 7. Figure 2 — Fine-Tuning Robustness
+Output:
+results/fine_tuning_robustness.png
 ```
 python -m scripts.experiments.finetune
 ```
-Output:
-results/fine_tuning_robustness.png
+
 
 8. Figure 3 — Pruning Robustness
+Output:
+results/pruning_robustness.png
 ```
 python -m scripts.experiments.pruning
 ```
-Output:
-results/pruning_robustness.png
+
 
 9. Figure 4 — Evasion Attack (ROC Curve)
+Output:
+results/evasion_roc_curve.png
 ```
 python -m scripts.experiments.evasion
 ```
-Output:
-results/evasion_roc_curve.png
+
 
 10. Figure 5 — Fraudulent Ownership Attack
+Output:
+results/fraudulent_declaration.png
 ```
 python -m scripts.experiments.fraud
 ```
-Output:
-results/fraudulent_declaration.png
+
 
 
 
